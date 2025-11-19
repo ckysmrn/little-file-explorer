@@ -17,6 +17,7 @@ import java.util.Objects;
 public class FileOperation {
 
     public static File[] getAllStorages(final Context context) {
+        final privateDir = context.getFilesDir();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             File[] paths = context.getExternalFilesDirs(null);
             var pathArray = new ArrayList<File>();
@@ -25,18 +26,19 @@ public class FileOperation {
                 final String path = file.getAbsolutePath();
                 pathArray.add(new File(path.substring(0, path.lastIndexOf("/Android/") + 1)).getAbsoluteFile());
             }
-            paths = new File[pathArray.size()];
+            paths = new File[pathArray.size() + 1];
             for (int i = 0; i < pathArray.size(); i++) {
                 paths[i] = pathArray.get(i);
             }
+            paths[pathArray.size() + 1] = privateDir;
             return paths;
         } else {
             final File primary = new File(Objects.requireNonNull(System.getenv("EXTERNAL_STORAGE"))).getAbsoluteFile();
             final String secondary = System.getenv("SECONDARY_STORAGE");
             if (secondary != null)
-                return new File[]{primary, new File(secondary).getAbsoluteFile()};
+                return new File[]{primary, new File(secondary).getAbsoluteFile(), privateDir};
             else
-                return new File[]{primary};
+                return new File[]{primary, privateDir};
         }
     }
 
