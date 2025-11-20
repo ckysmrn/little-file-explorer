@@ -1,7 +1,7 @@
 package com.martinmimigames.simplefileexplorer.layout;
 
 import android.app.Activity;
-import android.view.ContextThemeWrapper;
+//import android.view.ContextThemeWrapper;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -62,11 +62,13 @@ public final class DetailsDialogContainer {
         buttonContainer.setLayoutParams(wrapContent);
 
         // creates buttons to put inside container
-        copyMd5 = new TextView(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //copyMd5 = new TextView(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        copyMd5 = new TextView(activity);
         copyMd5.setText("copy");
         copyMd5.setLayoutParams(wrapContent);
         buttonContainer.addView(copyMd5);
-        checkMd5 = new TextView(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //checkMd5 = new TextView(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        checkMd5 = new TextView(activity);
         checkMd5.setText("check clipboard");
         checkMd5.setLayoutParams(wrapContent);
         buttonContainer.addView(checkMd5);
