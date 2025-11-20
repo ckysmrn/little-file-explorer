@@ -2,7 +2,7 @@ package com.martinmimigames.simplefileexplorer.layout;
 
 import android.app.Activity;
 import android.util.TypedValue;
-import android.view.ContextThemeWrapper;
+//import android.view.ContextThemeWrapper;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import com.martinmimigames.simplefileexplorer.R;
@@ -31,25 +31,30 @@ public class OpenListDialogContainer {
         base.setOrientation(LinearLayout.VERTICAL);
         base.setLayoutParams(wrapContent);
 
-        open = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //open = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        open = new Button(activity);
         open.setLayoutParams(wrapContent);
         open.setText("Open");
         open.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         base.addView(open);
 
-        details = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //details = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        details = new Button(activity);
         details.setLayoutParams(wrapContent);
         details.setText("Details");
         details.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         base.addView(details);
 
-        share = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //share = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        share = new Button(activity);
         share.setLayoutParams(wrapContent);
         share.setText("Share");
         share.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         base.addView(share);
 
-        cancel = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //cancel = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        cancel = new Button(activity);
+        
         cancel.setLayoutParams(wrapContent);
         cancel.setText("Cancel");
         cancel.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
