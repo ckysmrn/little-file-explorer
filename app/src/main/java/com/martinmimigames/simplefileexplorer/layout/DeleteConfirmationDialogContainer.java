@@ -1,7 +1,7 @@
 package com.martinmimigames.simplefileexplorer.layout;
 
 import android.app.Activity;
-import android.view.ContextThemeWrapper;
+//import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -59,12 +59,14 @@ public class DeleteConfirmationDialogContainer {
         scrollViewSizeLimiter.addView(scrollView);
         base.addView(scrollViewSizeLimiter);
 
-        delete = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //delete = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        delete = new Button(activity);
         delete.setLayoutParams(wrapContent);
         delete.setText("Delete");
         base.addView(delete);
 
-        cancel = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        //cancel = new Button(new ContextThemeWrapper(activity, R.style.buttonStyle));
+        cancel = new Button(activity);
         cancel.setLayoutParams(wrapContent);
         cancel.setText("Cancel");
         base.addView(cancel);
